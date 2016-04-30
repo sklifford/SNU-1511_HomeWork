@@ -12,29 +12,16 @@ namespace HomeWork1_3
             Console.Write("Введите число для отображения его на экране: ");
             String number = Console.ReadLine();
             int count = number.Length;
-            int full_number = Int32.Parse(number);
-            int revers_number = 0;
             int digit;
-            //_______________переворачиваем число_____________________
-            for(int i = count; i > 0; i--)
-            {
-                digit = full_number % 10;
-                for(int j = 1; j < i; j++)
-                {
-                    digit *= 10;
-                }
-                revers_number += digit;
-                full_number /= 10;
-            }
+            char symbol;
             Console.WriteLine();
             //_____________________прорисовка_________________________
             for(int i = 0; i < 8; i++)
             {
-                int copy = revers_number;
                 for(int d = 0; d < count; d++)
                 {
-                    digit = copy % 10;
-                    copy /= 10;
+                    symbol = number[d];
+                    digit = int.Parse(char.ToString(symbol));
                     switch (digit)
                     {
                         case 1:
